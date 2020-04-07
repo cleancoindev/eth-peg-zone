@@ -1,15 +1,12 @@
 # Peg Zone Smart Contracts
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
-[![Gitter](https://badges.gitter.im/WingsChat/community.svg)](https://gitter.im/WingsChat/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-**THIS IS WORK  IN PROGRESS, NOT FOR PRODUCTION/TESTNET USAGE**
-
-**WINGS peg zone** smart contracts implementation, based on PoA (Proof of Authority) government model, supports **ETH and any ERC20 approved token**.
+**Dfinance peg zone** smart contracts implementation, based on PoA (Proof of Authority) government model, supports **ETH and any ERC20 approved token**.
 
 Allowing to move ETH and ERC20 tokens between Ethereum
-blockchain and **WINGS Blockchain**.
+blockchain and **DFinance Blockchain**.
 
-Right now security is reached by PoA validators, that inspected by WINGS community, later it should be replaced with Proof of Stake (PoS) algorithm to
+Right now security is reached by PoA validators, that inspected by dfinance community, later it should be replaced with Proof of Stake (PoS) algorithm to
 reach more decentralization.
 
 ## Features
@@ -28,7 +25,7 @@ This work is in progress, but general functionality is already implemented:
 
 ## Motivation
 
-In a nutshell, main motivation to use multiple native currencies from different blockchains inside **WINGS** blockchain, is that it will provide more liquidity for financial derivatives and financial operations  and will not be limited by one ecosystem. This idea opens new doors for a many use cases we can bring to blockchain technology such as DeFi, Swaps, Futures, Options.
+In a nutshell, main motivation to use multiple native currencies from different blockchains inside **dfinance** blockchain, is that it will provide more liquidity for financial derivatives and financial operations  and will not be limited by one ecosystem. This idea opens new doors for a many use cases we can bring to blockchain technology such as DeFi, Swaps, Futures, Options.
 
 During our development we are going to make the same
 solutions for popular blockchains, such as **Bitcoin, EOS, Tron, Lisk, etc**.
@@ -42,18 +39,18 @@ For easy explanation let's make a small glossary:
 * `Validator` - Validator account involved in PoA consensus
 * `Peggy`     - Peg zone allowing to move tokens between chains
 * `Consensus` - When any action requires validators N/2+1 approve, where N is total amount of PoA validators
-* `mETH`      - Example currency, 1:1 to ETH, but exists on Wings blockchain
+* `mETH`      - Example currency, 1:1 to ETH, but exists on dfinance blockchain
 
 So let's look at **ETH to mETH UML** as example
 
-![Wings to wETH UML](/res/eth_wei_flow.png?raw=true "Wings to WETH UML")
+![DFI to wETH UML](/res/eth_wei_flow.png?raw=true "DFI to WETH UML")
 
-mETH to ETH conversion going to work in the same way, but lock will start at Wings blockchain, and withdraw will happen at Ethereum blockchain.
+mETH to ETH conversion going to work in the same way, but lock will start at dfinance blockchain, and withdraw will happen at Ethereum blockchain.
 
 Current repository contains smart contracts part like:
 
 * [PoAGovernment.sol](/contracts/PoAGovernment.sol) - Implements validators logic and PoA consensus logic on actions during peg zone life cycle
-* [Bridge.sol](/contracts/Bridge.sol) - Implements bridge to lock/withdraw Ethereum and any listed ERC20 tokens, when user want to move his ETH or ERC20 tokens to Wings blockchain
+* [Bridge.sol](/contracts/Bridge.sol) - Implements bridge to lock/withdraw Ethereum and any listed ERC20 tokens, when user want to move his ETH or ERC20 tokens to dfinance blockchain
 * [BankStorage.sol](/contracts/BankStorage.sol)  - Keeps ETH or ERC20 tokens and split fees between validators
 
 ## PoA multisignature logic
@@ -157,8 +154,8 @@ The code covered with tests, however documentation not generated yet.
 
 ## Contribution
 
-Current project is under development and going to evolve together with other parts of Wings blockchain as
-**Relay Layer** and Wings blockchain itself, anyway we have
+Current project is under development and going to evolve together with other parts of dfinance blockchain as
+**Relay Layer** and dfinance blockchain itself, anyway we have
 planned things to:
 
 * More tests coverage
@@ -172,14 +169,14 @@ solidity [style guide](https://solidity.readthedocs.io/en/v0.5.3/style-guide.htm
 
 In case of modification our Javascript code ([migrations](/migrations) and [tests](/test)) follow our [eslint](/.eslintrc) configuration.
 
-This project has the [following contributors](https://github.com/WingsDao/griffin-consensus-poc/graphs/contributors).
+This project has the [following contributors](https://github.com/dfinance/eth-peg-zone/graphs/contributors).
 
 ## License
 
-Copyright © 2019 Wings Foundation
+Copyright © 2019 Wings Stiftung
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the [GNU General Public License](https://github.com/WingsDAO/griffin-consensus-poc/tree/master/LICENSE) along with this program.  If not, see <http://www.gnu.org/licenses/>.
+You should have received a copy of the [GNU General Public License](https://github.com/dfinance/eth-peg-zone/tree/master/LICENSE) along with this program.  If not, see <http://www.gnu.org/licenses/>.
