@@ -7,7 +7,7 @@ skinparam ParticipantPadding 20
 skinparam BoxPadding 10
 
 title  __Simple__ convert\n ETH to mETH
-footer Wings Peg Zone Implementation
+footer Dfinance Peg Zone Implementation
 
 actor Alice
 
@@ -20,7 +20,7 @@ box "Relay Layer"
 participant "Validators Nodes" as Relay
 end box
 
-participant "Wings Blockchain" as Blockchain
+participant "Dfinance Blockchain" as Blockchain
 
 Alice   -> Bridge: Deposit ETH
 note left
@@ -42,7 +42,7 @@ deactivate Bridge
 
 activate   Relay
 ...N confirmations later...
-Relay   -> Blockchain: Issue mETH on Alice address\n inside Wings Blockchain
+Relay   -> Blockchain: Issue mETH on Alice address\n inside Dfinance Blockchain
 note left
     Relay layer consists
     of validators nodes
@@ -52,6 +52,6 @@ note left
     on both chains by their consensus
 end note
 
-Blockchain -> Alice: Alice got mETH\n on Wings blockchain
+Blockchain -> Alice: Alice got mETH\n on Dfinance blockchain
 deactivate Relay
 @enduml
